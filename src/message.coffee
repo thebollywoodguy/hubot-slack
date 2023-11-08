@@ -112,7 +112,7 @@ class SlackTextMessage extends TextMessage
     @thread_ts = @rawMessage.thread_ts if @rawMessage.thread_ts?
     @mentions = []
 
-    super @user, @text, @rawMessage.ts
+    super user, text, rawMessage.ts
 
   ###*
   # Build the text property, a flat string representation of the contents of this message.
