@@ -31,8 +31,11 @@ class FileSharedMessage extends Message
   # @param {string} file_id - A String identifying the file_id of the file that was shared.
   # @param {string} event_ts - A String of the file_shared event timestamp.
   ###
-  constructor: (@user, @file_id, @event_ts) ->
-    super @user
+  constructor: (user, file_id, event_ts) ->
+    super user
+    @user = user
+    @file_id = file_id
+    @event_ts = event_ts
 
 class MeMessage extends TextMessage
 
