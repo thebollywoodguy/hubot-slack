@@ -17,8 +17,6 @@ class ReactionMessage extends Message
   # custom integration (not part of a Slack app with a bot user), then this value will be undefined.
   # @param {string} event_ts - A String of the reaction event timestamp.
   ###
-  constructor: (@type, @user, @reaction, @item_user, @item, @event_ts) ->
-    super @user
   constructor: (type, user, reaction, item_user, item, event_ts) ->
     super user
     @type = type
