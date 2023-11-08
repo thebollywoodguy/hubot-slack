@@ -52,8 +52,9 @@ class MeMessage extends TextMessage
   # @param {string} text - Text of the /me message
   # @param {string} event_ts - event timestamp
   ###
-  constructor: (@user, @text, @event_ts) ->
-    super @user, @text, @event_ts
+  class MeMessage extends TextMessage
+  constructor: (@user, @text, @event_ts) -> 
+    super user, text, event_ts
 
 class PresenceMessage extends Message
 
