@@ -19,7 +19,14 @@ class ReactionMessage extends Message
   ###
   constructor: (@type, @user, @reaction, @item_user, @item, @event_ts) ->
     super @user
-    @type = @type.replace("reaction_", "")
+  constructor: (type, user, reaction, item_user, item, event_ts) ->
+    super user
+    @type = type
+    @user = user
+    @reaction = reaction
+    @item_user = item_user
+    @item = item
+    @event_ts = event_ts
     
 class FileSharedMessage extends Message
 
