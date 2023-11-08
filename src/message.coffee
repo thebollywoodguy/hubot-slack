@@ -102,6 +102,7 @@ class SlackTextMessage extends TextMessage
   # @param {string} robot_alias - The alias for this robot
   ###
   constructor: (@user, @text, rawText, @rawMessage, channel_id, robot_name, robot_alias) ->
+    super user, text, rawMessage.ts
     # private instance properties
     @_channel_id = channel_id
     @_robot_name = robot_name
@@ -112,7 +113,7 @@ class SlackTextMessage extends TextMessage
     @thread_ts = @rawMessage.thread_ts if @rawMessage.thread_ts?
     @mentions = []
 
-    super user, text, rawMessage.ts
+    
 
   ###*
   # Build the text property, a flat string representation of the contents of this message.
